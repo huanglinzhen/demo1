@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增会员</title>
+
+</head>
+<body>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<form id="form1">
+    <p>会员姓名：<input name="mname"></p>
+    <p>会员号码：<input  name="mphone"></p>
+    <p>会员等级：<input name="mlevel"> </p>
+   <!-- <p>入会时间：<input type="date" name="minTime"></p>-->
+    <p>卡号: <input name="mcardNo"></p>
+</form>
+<button type="button" id="btn1">提交</button>
+
+
+<script>
+    $(function(){
+        alert("第一个弹窗")
+        $("#btn1").click(function () {
+            alert("第二个弹窗")
+            $.ajax({
+                url:"members/login",
+                type:"post",
+                data:$("#form1").serialize(),
+                dataType:"json",
+                success:function (data) {
+                    if(data.count==1){
+                        alert("添加成功")
+                    }else {
+                        alert("添加失败")
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+
+
+</body>
+</html>

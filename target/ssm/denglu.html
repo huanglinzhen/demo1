@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>在登录</p>
+<div>
+    <form id="form1">
+        <p>
+
+
+            <input onclick=on_click() type="button" value="新增" id="btn2">
+        </p>
+
+    </form>
+</div>
+<div>
+
+    <tbody id="list">
+
+    </tbody>
+
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+      /*  $("#btn2").click(function (){
+
+            alert("这是一个弹窗")
+            var $fm=$(`<form method="post" action="user/login">
+        <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+        <p>用户名<input name="userName"></p>
+        <p>密码<input type="password" name="userPwd"></p>
+        <p><input type="submit" value="登录"></p>
+
+        </form>`)
+               var $fm=$("<p>插入数据</p>")
+            $("#list").append($fm)
+        })*/
+        $("#btn2").click(function () {
+
+            alert("这是一个弹窗")
+            var $fm=$(`<tr>
+                    <td>${this.mid}</td>
+                    <td>${this.mname}</td>
+                    <td>${this.mphone}</td>
+                    <td>${this.mlevel}级</td>
+                    <td>${this.mcardNo}</td>
+                    <td>${this.minTime}</td>
+                    <td><a href="#">修改</a>
+                    <a href="#">删除</a>
+                    </td>
+                    </tr>`)
+            $("#list").append($fm)
+
+
+
+        })
+
+    })
+
+
+
+
+
+</script>
+</body>
+</html>
